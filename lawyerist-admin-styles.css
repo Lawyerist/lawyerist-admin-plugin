@@ -1,0 +1,4 @@
+/* Hide option to open links in a new window. */
+#wp-link .link-target {
+  display: none;
+}
