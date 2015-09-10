@@ -2,3 +2,20 @@
 #wp-link .link-target {
   display: none;
 }
+
+input#publish {
+  background: #bb0000;
+  border-color: #aa0000;
+}
+
+input#publish:focus,
+input#publish:hover {
+  background: #cc0000;
+  border-color: #bb0000;
+}
+
+input#publish:focus,
+input#publish:hover {
+  background: #aa0000;
+  border-color: #aa0000;
+}

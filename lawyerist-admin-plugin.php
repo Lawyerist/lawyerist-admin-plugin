@@ -15,7 +15,7 @@ Stylesheets
 ------------------------------*/
 
 function lawyerist_admin_stylesheet() {
-	wp_register_style( 'admin-stylesheet', plugins_url('lawyerist-admin-styles.css', __FILE__) );
+	wp_enqueue_style( 'admin-stylesheet', plugins_url('lawyerist-admin-styles.css', __FILE__) );
 }
 
 add_action('admin_enqueue_scripts', 'lawyerist_admin_stylesheet');
@@ -30,7 +30,7 @@ Mostly taken from this plugin: wordpress.org/plugins/draft-posts-widget
 function draft_posts_widget_function() {
 
   $curr_user_id = get_current_user_id( );
-  
+
   global $wpdb,$post;
 
   $posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_status = 'draft' AND ( post_type = 'post' AND post_author = $curr_user_id ) ORDER BY post_modified DESC LIMIT 10" );
