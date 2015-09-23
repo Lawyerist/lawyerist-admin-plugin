@@ -9,9 +9,17 @@ Version: [See README.md for changelog]
 Author URI: http://samglover.net
 */
 
+/* INDEX
+
+Admin Stylesheets
+Draft Posts Dashboard Widget
+Sidebar Ads Widget
+
+*/
+
 
 /*------------------------------
-Stylesheets
+Admin Stylesheets
 ------------------------------*/
 
 function lawyerist_admin_stylesheet() {
