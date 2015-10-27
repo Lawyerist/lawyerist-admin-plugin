@@ -12,6 +12,7 @@ Author URI: http://samglover.net
 /* INDEX
 
 Admin Stylesheets
+Remove Quickpress
 Draft Posts Dashboard Widget
 
 */
@@ -27,6 +28,17 @@ function lawyerist_admin_stylesheet() {
 
 add_action('admin_enqueue_scripts', 'lawyerist_admin_stylesheet');
 add_action('login_enqueue_scripts', 'lawyerist_admin_stylesheet');
+
+
+/*------------------------------
+Remove Quickpress
+------------------------------*/
+
+function remove_quickpress() {
+	remove_meta_box('dashboard_quick_press','dashboard','side');
+}
+
+add_action('wp_dashboard_setup','remove_quickpress');
 
 
 /*------------------------------
