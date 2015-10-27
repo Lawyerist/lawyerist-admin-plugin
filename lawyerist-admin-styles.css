@@ -1,8 +1,11 @@
 /* Hide option to open links in a new window. */
+
 #wp-link .link-target {
   display: none;
 }
 
+
+/* Red Publish button. */
 input#publish {
   background: #bb0000;
   border-color: #aa0000;

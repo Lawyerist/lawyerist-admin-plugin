@@ -74,7 +74,7 @@ function draft_posts_widget_function() {
 
 	echo "</ul>\n";
 
-	echo '<p><a href="edit.php?post_status=draft&author=' . $curr_user_id . '">View All drafts.</a></p>';
+	echo '<p class="textright"><a class="button" href="edit.php?post_status=draft&author=' . $curr_user_id . '">View All Drafts</a></p>';
 
 	} else {
 
