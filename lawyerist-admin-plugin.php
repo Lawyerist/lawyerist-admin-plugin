@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Lawyerist Admin Plugin
-Plugin URI: http://lawyerist.com
+Plugin URI: https://lawyerist.com
 Description: An admin plugin for Lawyerist.com.
 Author: Sam Glover
 Version: [See README.md for changelog]
@@ -13,7 +13,6 @@ Author URI: http://samglover.net
 
 Admin Stylesheets
 Draft Posts Dashboard Widget
-Sidebar Ads Widget
 
 */
 
@@ -75,7 +74,7 @@ function draft_posts_widget_function() {
 
 	echo "</ul>\n";
 
-	echo '<p><a href="edit.php?post_status=draft&author=' . $curr_user_id . '">View All My Drafts</a></p>';
+	echo '<p><a href="edit.php?post_status=draft&author=' . $curr_user_id . '">View All drafts.</a></p>';
 
 	} else {
 
