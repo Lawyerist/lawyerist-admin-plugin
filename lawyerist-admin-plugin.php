@@ -22,12 +22,26 @@ Draft Posts Dashboard Widget
 Admin Stylesheets
 ------------------------------*/
 
-function lawyerist_admin_stylesheet() {
+function lawyerist_admin_stylesheets() {
 	wp_enqueue_style( 'admin-stylesheet', plugins_url('lawyerist-admin-styles.css', __FILE__) );
+
+	/* Stylesheet for the WordPress Text Editor */
+	wp_enqueue_style('editor-styles', plugins_url('lawyerist-text-editor-styles.css', __FILE__));
 }
 
-add_action('admin_enqueue_scripts', 'lawyerist_admin_stylesheet');
-add_action('login_enqueue_scripts', 'lawyerist_admin_stylesheet');
+add_action('admin_enqueue_scripts', 'lawyerist_admin_stylesheets');
+add_action('login_enqueue_scripts', 'lawyerist_admin_stylesheets');
+
+
+/* Add Stylesheet for the TinyMCE/Visual Editor */
+
+function plugin_mce_css( $mce_css ) {
+	if ( ! empty( $mce_css ) )
+		$mce_css .= ',';
+	$mce_css .= plugins_url( 'lawyerist-visual-editor-styles.css', __FILE__ );
+	return $mce_css;
+}
+add_filter( 'mce_css', 'plugin_mce_css' );
 
 
 /*------------------------------

@@ -1,3 +1,10 @@
+/* Limit post editor width */
+
+.post-php .wrap {
+  margin: 0 auto;
+  max-width: 940px;
+}
+
 /* Hide option to open links in a new window. */
 
 #wp-link .link-target {
