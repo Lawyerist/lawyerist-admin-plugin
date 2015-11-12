@@ -1,3 +1,3 @@
-# Lawyerist Admin Plugin for WordPress
+# Lawyerist Survival Plugin
 
 An admin plugin for Lawyerist.com.

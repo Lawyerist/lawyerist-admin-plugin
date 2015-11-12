@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Lawyerist Admin Plugin
+Plugin Name: Lawyerist Survival Plugin
 Plugin URI: https://lawyerist.com
 Description: An admin plugin for Lawyerist.com.
 Author: Sam Glover
@@ -22,26 +22,26 @@ Draft Posts Dashboard Widget
 Admin Stylesheets
 ------------------------------*/
 
-function lawyerist_admin_stylesheets() {
-	wp_enqueue_style( 'admin-stylesheet', plugins_url('lawyerist-admin-styles.css', __FILE__) );
+function lap_admin_stylesheets() {
+	wp_enqueue_style( 'admin-stylesheet', plugins_url('lap-admin-styles.css', __FILE__) );
 
 	/* Stylesheet for the WordPress Text Editor */
-	wp_enqueue_style('editor-styles', plugins_url('lawyerist-text-editor-styles.css', __FILE__));
+	wp_enqueue_style('editor-styles', plugins_url('lap-text-editor-styles.css', __FILE__));
 }
 
-add_action('admin_enqueue_scripts', 'lawyerist_admin_stylesheets');
-add_action('login_enqueue_scripts', 'lawyerist_admin_stylesheets');
+add_action('admin_enqueue_scripts', 'lap_admin_stylesheets');
+add_action('login_enqueue_scripts', 'lap_admin_stylesheets');
 
 
 /* Add Stylesheet for the TinyMCE/Visual Editor */
 
-function plugin_mce_css( $mce_css ) {
+function lap_mce_css( $mce_css ) {
 	if ( ! empty( $mce_css ) )
 		$mce_css .= ',';
-	$mce_css .= plugins_url( 'lawyerist-visual-editor-styles.css', __FILE__ );
+	$mce_css .= plugins_url( 'lap-visual-editor-styles.css', __FILE__ );
 	return $mce_css;
 }
-add_filter( 'mce_css', 'plugin_mce_css' );
+add_filter( 'mce_css', 'lap_mce_css' );
 
 
 /*------------------------------
