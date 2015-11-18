@@ -6,15 +6,15 @@ Load Fonts
 @font-face {
     font-family: 'concourse-headings';
     src: url('fonts/concourse/concourse_t6_regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'concourse-headings-italic';
+    font-family: 'concourse-headings';
     src: url('fonts/concourse/concourse_t6_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: bold;
+    font-style: italic;
 }
 
 
@@ -27,26 +27,24 @@ Load Fonts
 }
 
 @font-face {
-    font-family: 'concourse-italic';
+    font-family: 'concourse';
     src: url('fonts/concourse/concourse_t4_italic-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'concourse-bold';
+    font-family: 'concourse';
     src: url('fonts/concourse/concourse_t4_bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'concourse-bold-italic';
+    font-family: 'concourse';
     src: url('fonts/concourse/concourse_t4_bold_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+    font-weight: bold;
+    font-style: italic;
 }
 
 
@@ -59,52 +57,31 @@ Load Fonts
 }
 
 @font-face {
-    font-family: 'equity-italic';
+    font-family: 'equity';
     src: url('fonts/equity/equity_text_b_italic-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'equity-bold';
+    font-family: 'equity';
     src: url('fonts/equity/equity_text_b_bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'equity-bold-italic';
+    font-family: 'equity';
     src: url('fonts/equity/equity_text_b_bold_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: bold;
+    font-style: italic;
 }
 
 
 /* Triplicate (code) */
 @font-face {
     font-family: 'triplicate';
-    src: url('fonts/triplicate/triplicate_t3_code_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'triplicate-italic';
-    src: url('fonts/triplicate/triplicate_t3_code_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'triplicate-bold';
-    src: url('fonts/triplicate/triplicate_t3_code_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'triplicate-bold-italic';
-    src: url('fonts/triplicate/triplicate_t3_code_bold_italic-webfont.woff') format('woff');
+    src: url('fonts/triplicate/triplicate_t4_code_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -149,11 +126,57 @@ html {
 Typography
 ------------------------------*/
 
+/* Equity is the default font. */
 body {
-	background: #fff;
-	color: #111;
 	font-family: equity, serif;
-  font-size: 1.8rem;
+  font-variant-ligatures: common-ligatures;
+}
+
+
+/* Things that use Concourse */
+aside blockquote,
+button,
+.button,
+.drop_cap,
+.category_list,
+.current_posts_headline,
+#footer,
+#header,
+input[type="button"],
+.flag,
+.fp_tab h2,
+.fp_bottom_tab h2,
+label,
+#lab_posts,
+.pagenav_link,
+#popular_posts_tabbed,
+.postmeta,
+p.pullout,
+p.pullquote,
+#series_nav li,
+.tag_list,
+.theiaPostSlider_nav ._text,
+ul#menu-default {
+  font-family: concourse, sans-serif;
+}
+
+
+/* Things that use Triplicate */
+code {
+  font-family: triplicate, monospace;
+}
+
+
+/* Typography */
+body {
+	color: #111;
+}
+
+.page,
+.post,
+.post_body,
+#footer {
+	font-size: 1.8rem;
 	line-height: 1.5;
 }
 
@@ -181,7 +204,6 @@ blockquote {
     border: none;
     clear: both;
     color: #888;
-    font-family: concourse, sans-serif;
     font-size: 2.8rem;
     font-style: italic;
     margin: 0 2.8rem 2.8rem 2.8rem;
@@ -190,7 +212,7 @@ blockquote {
 
 code {
 	color: #777;
-	font-family: triplicate, monospace;
+  font-size: 1.6rem;
 	white-space: pre-wrap; /* css-3 */
 	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
 	white-space: -pre-wrap; /* Opera 4-6 */
@@ -200,7 +222,6 @@ code {
 
 .drop_cap {
 	float: left;
-	font-family: concourse, sans-serif;
 	font-size: 3.2rem;
 	font-weight: bold;
 	line-height: 1em;
@@ -211,7 +232,7 @@ em,
 i,
 italic,
 italics {
-	font-style: italic;
+  font-style: italic;
 }
 
 embed,
@@ -228,6 +249,20 @@ h6 {
 	color: #333;
 	font-family: concourse-headings, sans-serif;
   font-weight: bold;
+  line-height: 1.15;
+  margin-top: 0;
+}
+
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em {
+	color: #333;
+	font-family: concourse-headings-italic, sans-serif;
+  font-style: italic;
+  font-weight: bold;
   margin-top: 0;
 }
 
@@ -243,31 +278,26 @@ h6 a {
 h1,
 h2 {
 	font-size: 3.8rem;
-	line-height: 5.2rem;
 	margin-bottom: .25em;
 }
 
 h3 {
 	font-size: 2.8rem;
-	line-height: 3.9rem;
 	margin-bottom: .5em;
 }
 
 h4 {
 	font-size: 2.4rem;
-	line-height: 3.5rem;
 	margin-bottom: .5em;
 }
 
 h5 {
 	font-size: 2.2rem;
-	line-height: 3.2rem;
 	margin-bottom: .5em;
 }
 
 h6 {
 	font-size: 2rem;
-	line-height: 2.8rem;
 	margin-bottom: .75em;
 }
 
@@ -301,7 +331,6 @@ p.pullout {
   border: 1px solid #ddd;
 	display: inline-block;
 	float: right;
-  font-family: concourse, sans-serif;
 	margin: 0 0 1.5rem 1.5rem;
 	padding: 1.5rem 2.5rem 2rem 2.5rem;
 	width: 39.0625%;
@@ -327,8 +356,8 @@ p.wp-caption-text {
 
 .postmeta {
 	color: #777;
-  font-family: concourse, serif;
   font-size: 1.6rem;
+  line-height: 1.4;
   margin-bottom: 1em;
 }
 
