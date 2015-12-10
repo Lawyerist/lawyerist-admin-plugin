@@ -443,3 +443,12 @@ img.wp-post-image.attachment-large {
   max-width: 100%;
 	width: 100%;
 }
+
+
+/*------------------------------
+Useful
+------------------------------*/
+
+.clear {
+  clear:both;
+}
