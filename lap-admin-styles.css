@@ -1,8 +1,9 @@
 /* Limit post editor width */
 
-.post-php .wrap {
+.post-php .wrap,
+.post-new-php .wrap {
   margin: 0 auto;
-  max-width: 940px;
+  max-width: 960px;
 }
 
 /* Hide option to open links in a new window. */
