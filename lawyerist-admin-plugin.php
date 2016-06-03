@@ -14,7 +14,6 @@ Author URI: http://samglover.net
 Admin Stylesheets
 Remove Quickpress
 Draft Posts Dashboard Widget
-Custom Post Statuses
 
 */
 
@@ -117,99 +116,3 @@ function add_draft_posts_widget() {
 }
 
 add_action('wp_dashboard_setup', 'add_draft_posts_widget');
-
-
-/*------------------------------
-Custom Post Statuses
-
-Cannot implement until WordPress fixes this:
-https://core.trac.wordpress.org/ticket/12706
-
-function post_status_submit_for_review() {
-
-	$args = array(
-		'label'                     => 'Submit for Review',
-		'label_count'               => 'Submit for Review (%s)',
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-	);
-	register_post_status( 'Submit for Review', $args );
-
-}
-add_action( 'init', 'post_status_submit_for_review', 0 );
-
-
-function post_status_in_revision() {
-
-	$args = array(
-		'label'                     => 'In Revision',
-		'label_count'               => 'In Revision (%s)',
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-	);
-	register_post_status( 'In Revision', $args );
-
-}
-add_action( 'init', 'post_status_in_revision', 0 );
-
-
-// Register Custom Status
-function post_status_editing() {
-
-	$args = array(
-		'label'                     => 'Editing',
-		'label_count'               => 'Editing (%s)',
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-	);
-	register_post_status( 'Editing', $args );
-
-}
-add_action( 'init', 'post_status_editing', 0 );
-
-
-// Register Custom Status
-function post_status_eic_review() {
-
-	$args = array(
-		'label'                     => 'EIC Review',
-		'label_count'               => 'EIC Review (%s)',
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-	);
-	register_post_status( 'EIC Review', $args );
-
-}
-add_action( 'init', 'post_status_eic_review', 0 );
-
-
-// Register Custom Status
-function post_status_proof() {
-
-	$args = array(
-		'label'                     => 'Proof',
-		'label_count'               => 'Proofs (%s)',
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-	);
-	register_post_status( 'Proof', $args );
-
-}
-add_action( 'init', 'post_status_proof', 0 );
-
-
-// Register Custom Status
-function post_status_sponsored_proof() {
-
-	$args = array(
-		'label'                     => 'Sponsored Proof',
-		'label_count'               => 'Sponsored Proofs (%s)',
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-	);
-	register_post_status( 'Sponsored Proof', $args );
-
-}
-add_action( 'init', 'post_status_sponsored_proof', 0 );
-
-------------------------------*/
