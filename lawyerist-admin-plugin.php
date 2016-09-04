@@ -11,12 +11,25 @@ Author URI: http://samglover.net
 
 /* INDEX
 
+Upload File Types
 Admin Stylesheets
 Remove Quickpress
 Add Excerpts to Pages
 Draft Posts Dashboard Widget
 
 */
+
+
+/*------------------------------
+Upload Files Types
+------------------------------*/
+
+function lap_add_upload_types($mime_types){
+    $mime_types['json'] = 'application/json';
+    return $mime_types;
+}
+
+add_filter( 'upload_mimes', 'lap_add_upload_types', 1, 1 );
 
 
 /*------------------------------
@@ -30,8 +43,8 @@ function lap_admin_stylesheets() {
 	wp_enqueue_style('editor-styles', plugins_url('lap-text-editor-styles.css', __FILE__));
 }
 
-add_action('admin_enqueue_scripts', 'lap_admin_stylesheets');
-add_action('login_enqueue_scripts', 'lap_admin_stylesheets');
+add_action( 'admin_enqueue_scripts', 'lap_admin_stylesheets' );
+add_action( 'login_enqueue_scripts', 'lap_admin_stylesheets' );
 
 
 /* Add Stylesheet for the TinyMCE/Visual Editor */
@@ -51,10 +64,10 @@ Remove Quickpress
 ------------------------------*/
 
 function remove_quickpress() {
-	remove_meta_box('dashboard_quick_press','dashboard','side');
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 }
 
-add_action('wp_dashboard_setup','remove_quickpress');
+add_action( 'wp_dashboard_setup', 'remove_quickpress' );
 
 
 /*------------------------------
@@ -125,7 +138,7 @@ function draft_posts_widget_function() {
 
 
 function add_draft_posts_widget() {
-  wp_add_dashboard_widget('draft_posts_widget', 'My Drafts', 'draft_posts_widget_function');
+  wp_add_dashboard_widget( 'draft_posts_widget', 'My Drafts', 'draft_posts_widget_function' );
 }
 
-add_action('wp_dashboard_setup', 'add_draft_posts_widget');
+add_action( 'wp_dashboard_setup', 'add_draft_posts_widget' );
