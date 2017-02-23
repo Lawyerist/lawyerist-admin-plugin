@@ -13,6 +13,7 @@ Author URI: http://samglover.net
 
 Admin Stylesheets
 Remove Quickpress
+Add Excerpts to Pages
 Draft Posts Dashboard Widget
 
 */
@@ -41,6 +42,7 @@ function lap_mce_css( $mce_css ) {
 	$mce_css .= plugins_url( 'lap-visual-editor-styles.css', __FILE__ );
 	return $mce_css;
 }
+
 add_filter( 'mce_css', 'lap_mce_css' );
 
 
@@ -53,6 +55,17 @@ function remove_quickpress() {
 }
 
 add_action('wp_dashboard_setup','remove_quickpress');
+
+
+/*------------------------------
+Add Excerpts to Pages
+------------------------------*/
+
+function lawyerist_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+
+add_action( 'init', 'lawyerist_add_excerpts_to_pages' );
 
 
 /*------------------------------
