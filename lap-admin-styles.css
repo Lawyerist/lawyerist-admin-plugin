@@ -5,20 +5,14 @@
 }
 
 
-/* Red Publish button. */
-input#publish {
-  background: #bb0000;
-  border-color: #aa0000;
+/* Publish Button Alignment */
+#publishing-action .button {
+  display: block;
+  float: right !important;
 }
 
-input#publish:focus,
-input#publish:hover {
-  background: #cc0000;
-  border-color: #bb0000;
-}
-
-input#publish:focus,
-input#publish:hover {
-  background: #aa0000;
-  border-color: #aa0000;
+#workflow_submit.button,
+#oasiswf_make_revision.button {
+  clear: both;
+  margin-top: 5px;
 }
