@@ -12,7 +12,8 @@ Author URI: http://samglover.net
 /* INDEX
 
 Upload File Types
-Admin Stylesheets
+Stop Password Reset Emails
+Admin Stylesheet
 Remove Quickpress
 Add Excerpts to Pages
 Draft Posts Dashboard Widget
@@ -33,18 +34,24 @@ add_filter( 'upload_mimes', 'lap_add_upload_types', 1, 1 );
 
 
 /*------------------------------
-Admin Stylesheets
+Stop Password Reset Emails
 ------------------------------*/
 
-function lap_admin_stylesheets() {
-	wp_enqueue_style( 'admin-stylesheet', plugins_url('lap-admin-styles.css', __FILE__) );
-
-	/* Stylesheet for the WordPress Text Editor */
-	wp_enqueue_style('editor-styles', plugins_url('lap-text-editor-styles.css', __FILE__));
+if ( !function_exists( 'wp_password_change_notification' ) ) {
+  function wp_password_change_notification() {}
 }
 
-add_action( 'admin_enqueue_scripts', 'lap_admin_stylesheets' );
-add_action( 'login_enqueue_scripts', 'lap_admin_stylesheets' );
+
+/*------------------------------
+Admin Stylesheet
+------------------------------*/
+
+function lap_admin_stylesheet() {
+	wp_enqueue_style( 'admin-stylesheet', plugins_url('lap-admin-styles.css', __FILE__) );
+}
+
+add_action( 'admin_enqueue_scripts', 'lap_admin_stylesheet' );
+add_action( 'login_enqueue_scripts', 'lap_admin_stylesheet' );
 
 
 /* Add Stylesheet for the TinyMCE/Visual Editor */
