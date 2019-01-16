@@ -22,7 +22,7 @@ Draft Posts Dashboard Widget
 
 
 /*------------------------------
-Upload Files Types
+Upload File Types
 ------------------------------*/
 
 function lap_add_upload_types($mime_types){
@@ -52,18 +52,6 @@ function lap_admin_stylesheet() {
 
 add_action( 'admin_enqueue_scripts', 'lap_admin_stylesheet' );
 add_action( 'login_enqueue_scripts', 'lap_admin_stylesheet' );
-
-
-/* Add Stylesheet for the TinyMCE/Visual Editor */
-
-function lap_mce_css( $mce_css ) {
-	if ( ! empty( $mce_css ) )
-		$mce_css .= ',';
-	$mce_css .= plugins_url( 'lap-visual-editor-styles.css', __FILE__ );
-	return $mce_css;
-}
-
-add_filter( 'mce_css', 'lap_mce_css' );
 
 
 /*------------------------------
