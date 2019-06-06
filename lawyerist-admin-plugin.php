@@ -43,18 +43,6 @@ if ( !function_exists( 'wp_password_change_notification' ) ) {
 
 
 /*------------------------------
-Admin Stylesheet
-------------------------------*/
-
-function lap_admin_stylesheet() {
-	wp_enqueue_style( 'admin-stylesheet', plugins_url('lap-admin-styles.css', __FILE__) );
-}
-
-add_action( 'admin_enqueue_scripts', 'lap_admin_stylesheet' );
-add_action( 'login_enqueue_scripts', 'lap_admin_stylesheet' );
-
-
-/*------------------------------
 Remove Quickpress
 ------------------------------*/
 
