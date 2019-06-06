@@ -13,10 +13,8 @@ Author URI: http://lawyerist.com
 
 Upload File Types
 Stop Password Reset Emails
-Admin Stylesheet
 Remove Quickpress
 Add Excerpts to Pages
-Draft Posts Dashboard Widget
 
 */
 
@@ -62,62 +60,6 @@ function lawyerist_add_excerpts_to_pages() {
 }
 
 add_action( 'init', 'lawyerist_add_excerpts_to_pages' );
-
-
-/*------------------------------
-Draft Posts Dashboard Widget
-Mostly taken from this plugin: wordpress.org/plugins/draft-posts-widget
-------------------------------*/
-
-function draft_posts_widget_function() {
-
-  $curr_user_id = get_current_user_id( );
-
-  global $wpdb,$post;
-
-  $posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_status = 'draft' AND ( post_type = 'post' AND post_author = $curr_user_id ) ORDER BY post_modified DESC LIMIT 10" );
-
-	if ( $posts ) {
-
-		echo "<ul>\n";
-
-		foreach ( $posts as $post ) {
-
-			setup_postdata( $post );
-
-			$time = get_post_modified_time('G', true);
-
-			if ( ( abs(time() - $time) ) < 86400 )
-
-				$h_time = sprintf( __('%s ago'), human_time_diff( $time ) );
-
-			else
-
-				$h_time = mysql2date(__('Y-m-d'), $post->post_modified);
-
-			$posttitle = get_the_title();
-
-			if ( empty($posttitle) )
-
-				$posttitle = __('(no title)');
-
-			$title = ( current_user_can( 'edit_post', $post->ID ) ) ? '<a href="post.php?action=edit&amp;post=' . $post->ID . '">' . $posttitle . '</a>' : '<span style="text-decoration:underline">' . $posttitle . '</span>';
-
-			echo '	<li>' . sprintf( __('%s &#40;last updated %s&#41;', 'dashboard-draft-posts'), $title,  '<abbr title="' . get_the_modified_time(__('Y/m/d g:i:s A')) . '">' . $h_time . '</abbr>' ) . "</li>\n";
-
-		}
-
-	echo "</ul>\n";
-
-	echo '<p class="textright"><a class="button" href="edit.php?post_status=draft&author=' . $curr_user_id . '">View All Drafts</a></p>';
-
-	} else {
-
-		echo '<p>' . __("No drafts.", 'dashboard-draft-posts') . "</p>\n";
-
-	}
-
-}
 
 
 function add_draft_posts_widget() {
