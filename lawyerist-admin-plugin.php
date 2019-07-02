@@ -61,9 +61,4 @@ function lawyerist_add_excerpts_to_pages() {
 
 add_action( 'init', 'lawyerist_add_excerpts_to_pages' );
 
-
-function add_draft_posts_widget() {
-  wp_add_dashboard_widget( 'draft_posts_widget', 'My Drafts', 'draft_posts_widget_function' );
-}
-
 add_action( 'wp_dashboard_setup', 'add_draft_posts_widget' );

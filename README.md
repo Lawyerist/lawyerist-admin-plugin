@@ -1,3 +1,5 @@
 # Lawyerist Survival Plugin
 
-An admin plugin for Lawyerist.com.
+See Github commits for a sort-of changelog.
+
+https://github.com/Lawyerist/lawyerist-admin-plugin
