@@ -14,7 +14,6 @@ Author URI: http://lawyerist.com
 Upload File Types
 Stop Password Reset Emails
 Remove Quickpress
-Add Excerpts to Pages
 
 */
 
@@ -49,14 +48,3 @@ function remove_quickpress() {
 }
 
 add_action( 'wp_dashboard_setup', 'remove_quickpress' );
-
-
-/*------------------------------
-Add Excerpts to Pages
-------------------------------*/
-
-function lawyerist_add_excerpts_to_pages() {
-     add_post_type_support( 'page', 'excerpt' );
-}
-
-add_action( 'init', 'lawyerist_add_excerpts_to_pages' );
