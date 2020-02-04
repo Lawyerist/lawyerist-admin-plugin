@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [3.0.2] - 2020-02-04
+
+### [Added]
+- Percentage up-to-date.
+
 ## [3.0.1] - 2020-02-04
 
 ### [Added]
