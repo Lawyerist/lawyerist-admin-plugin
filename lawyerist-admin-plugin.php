@@ -57,9 +57,9 @@ add_action( 'wp_dashboard_setup', 'remove_quickpress' );
 function lap_page_status_dashboard_widgets() {
 
   wp_add_dashboard_widget(
-    'lap_page_status_widget',           // Widget slug.
-    esc_html__( 'Product Page Status', 'lap' ), // Title.
-    'lap_page_status_widget_render'     // Display function.
+    'lap_page_status_widget',                         // Widget slug.
+    esc_html__( 'Product Page Status', 'lawyerist' ), // Title.
+    'lap_page_status_widget_render'                   // Display function.
   );
 
 }
@@ -84,6 +84,7 @@ function lap_page_status_widget_render() {
     $needs_update = 0;
     $critical     = 0;
     $to_create    = 0;
+    $no_status    = 0;
 
     while ( $page_status_query->have_posts() ) : $page_status_query->the_post();
 
@@ -100,8 +101,13 @@ function lap_page_status_widget_render() {
             break;
 
           case 'Needs Update' :
-          default :
+
             $needs_update++;
+            break;
+
+          case null :
+
+            $no_status++;
             break;
 
         }
@@ -130,10 +136,10 @@ function lap_page_status_widget_render() {
     text-align: center;
   }
 
-  table#page-status .to-create td {
+  table#page-status .to-create td,
+  table#page-status .no-status td {
     font-size: 14px;
     font-weight: bold;
-    text-align: center;
   }
 
   </style>
@@ -153,7 +159,12 @@ function lap_page_status_widget_render() {
         <td style="background-color: #ffb1b1;"><?php echo $critical; ?></td>
       </tr>
       <tr class="to-create">
-        <td colspan="3">To create: <?php echo $to_create; ?></td>
+        <td>To create:</td>
+        <td><?php echo $to_create; ?></td>
+      </tr>
+      <tr class="no-status">
+        <td>No status:</td>
+        <td><?php echo $no_status; ?></td>
       </tr>
     </tbody>
   </table>
