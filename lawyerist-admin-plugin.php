@@ -126,21 +126,19 @@ function lap_page_status_widget_render() {
 
   <style>
 
-  table#page-status th {
-    font-weight: bold;
-    text-align: center;
-  }
+    table#page-status th {
+      font-weight: bold;
+      text-align: center;
+    }
 
-  table#page-status .published td {
-    font-size: 300%;
-    text-align: center;
-  }
+    table#page-status .published td  {
+      text-align: center;
+    }
 
-  table#page-status .to-create td,
-  table#page-status .no-status td {
-    font-size: 14px;
-    font-weight: bold;
-  }
+    table#page-status .bignum {
+      font-size: 300%;
+      margin-bottom: 10.4px;
+    }
 
   </style>
 
@@ -150,24 +148,29 @@ function lap_page_status_widget_render() {
         <th>Up to Date</th>
         <th>Needs Update</th>
         <th>Critical</th>
+        <th>To Create</th>
       </tr>
     </thead>
     <tbody>
       <tr class="published">
-        <td style="background-color: #b1ffb1;"><?php echo $up_to_date; ?></td>
-        <td style="background-color: #ffffb1;"><?php echo $needs_update; ?></td>
-        <td style="background-color: #ffb1b1;"><?php echo $critical; ?></td>
-      </tr>
-      <tr class="to-create">
-        <td>To create:</td>
-        <td><?php echo $to_create; ?></td>
-      </tr>
-      <tr class="no-status">
-        <td>No status:</td>
-        <td><?php echo $no_status; ?></td>
+        <td style="background-color: #b1ffb1;">
+          <p class="bignum"><?php echo $up_to_date; ?></p>
+          <p class="detail"><?php echo round( $up_to_date / $page_status_query->post_count * 100 ); ?>% of total (<?php echo $page_status_query->post_count; ?>)</p>
+        </td>
+        <td style="background-color: #ffffb1;">
+          <p class="bignum"><?php echo $needs_update; ?></p>
+        </td>
+        <td style="background-color: #ffb1b1;">
+          <p class="bignum"><?php echo $critical; ?></p>
+        </td>
+        <td>
+          <p class="bignum"><?php echo $to_create; ?></p>
+        </td>
       </tr>
     </tbody>
   </table>
+
+  <p>No status: <?php echo $no_status; ?></p>
 
   <?php
 
