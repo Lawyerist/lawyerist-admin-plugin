@@ -24,8 +24,8 @@ Scheduled Page Status Updates
 * Upload File Types
 */
 
-function lap_add_upload_types($mime_types){
-    $mime_types['json'] = 'application/json';
+function lap_add_upload_types( $mime_types ){
+    $mime_types[ 'json' ] = 'application/json';
     return $mime_types;
 }
 
