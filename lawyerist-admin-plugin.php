@@ -249,6 +249,7 @@ function lap_render_status_widget( $page_status_query ) {
 /**
 * Scheduled Page Status Updates
 */
+
 function lap_scheduled_page_status_updates() {
 
   $args = array(
