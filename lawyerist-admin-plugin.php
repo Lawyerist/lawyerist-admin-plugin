@@ -5,7 +5,7 @@
 * Plugin URI: https://lawyerist.com
 * Description: An admin plugin for Lawyerist.com.
 * Author: Sam Glover
-* Version: [See README.md for changelog]
+* Version: 3.2.0
 * Author URI: http://lawyerist.com
 */
 
@@ -18,18 +18,6 @@ Post & Page Status Dashboard Widgets
 Scheduled Page Status Updates
 
 */
-
-
-/**
-* Upload File Types
-*/
-
-function lap_add_upload_types($mime_types){
-    $mime_types['json'] = 'application/json';
-    return $mime_types;
-}
-
-add_filter( 'upload_mimes', 'lap_add_upload_types', 1, 1 );
 
 
 /**
@@ -54,6 +42,10 @@ add_action( 'wp_dashboard_setup', 'remove_quickpress' );
 
 /**
 * Post & Page Status Dashboard Widgets
+*
+* Adds widgets to the WordPress administrative dashboard that help us keep track
+* of which posts and pages are up to date and which need to be updated. Requires
+* Advanced Custom Fields for the post/page status.
 */
 function lap_page_status_dashboard_widgets() {
 
@@ -248,7 +240,12 @@ function lap_render_status_widget( $page_status_query ) {
 
 /**
 * Scheduled Page Status Updates
+*
+* Creates a daily cron job that checks for pages that have not been modified the
+* last 6 months or 1 year and changes their status to Needs Update or Critical
+* accordingly.
 */
+
 function lap_scheduled_page_status_updates() {
 
   $args = array(
