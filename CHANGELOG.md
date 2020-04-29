@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+
+## [3.1.1] - 2020-04-29
+
+### [Added]
+- Documentation.
+
 ## [3.1.0] - 2020-03-05
 
 ### [Added]
