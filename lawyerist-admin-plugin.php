@@ -5,7 +5,7 @@
 * Plugin URI: https://lawyerist.com
 * Description: An admin plugin for Lawyerist.com.
 * Author: Sam Glover
-* Version: 3.1.1
+* Version: 3.2.0
 * Author URI: http://lawyerist.com
 */
 

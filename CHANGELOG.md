@@ -5,25 +5,32 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 
-## [3.1.1] - 2020-04-29
+## [3.2.0] - 2020-04-29
 
 ### [Added]
 - Documentation.
+
+### [Removed]
+- Removed support for JSON uploads.
+
 
 ## [3.1.0] - 2020-03-05
 
 ### [Added]
 - Dashboard widgets for blog post and page widgets.
 
+
 ## [3.0.2] - 2020-02-04
 
 ### [Added]
 - Percentage up-to-date.
 
+
 ## [3.0.1] - 2020-02-04
 
 ### [Added]
 - No-status count.
+
 
 ## [3.0.0] - 2020-02-04
 
