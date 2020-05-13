@@ -20,6 +20,11 @@ Scheduled Page Status Updates
 */
 
 
+if ( is_admin() ) {
+	require_once( plugin_dir_path( __FILE__ ) . 'mlaf-plugin.php' );
+}
+
+
 /**
 * Stop Password Reset Emails
 */
